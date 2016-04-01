@@ -7,6 +7,7 @@ package com.study.jooq.common.generated;
 import com.study.jooq.common.generated.tables.Order;
 import com.study.jooq.common.generated.tables.SchemaVersion;
 import com.study.jooq.common.generated.tables.User;
+import com.study.jooq.common.generated.tables.Userwithorder;
 
 import javax.annotation.Generated;
 
@@ -38,4 +39,9 @@ public class Tables {
 	 * The table study.user
 	 */
 	public static final User USER = com.study.jooq.common.generated.tables.User.USER;
+
+	/**
+	 * VIEW
+	 */
+	public static final Userwithorder USERWITHORDER = com.study.jooq.common.generated.tables.Userwithorder.USERWITHORDER;
 }

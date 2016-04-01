@@ -7,6 +7,7 @@ package com.study.jooq.common.generated;
 import com.study.jooq.common.generated.tables.Order;
 import com.study.jooq.common.generated.tables.SchemaVersion;
 import com.study.jooq.common.generated.tables.User;
+import com.study.jooq.common.generated.tables.Userwithorder;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,7 +32,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Study extends SchemaImpl {
 
-	private static final long serialVersionUID = 1824682241;
+	private static final long serialVersionUID = 1434834855;
 
 	/**
 	 * The reference instance of <code>study</code>
@@ -56,6 +57,7 @@ public class Study extends SchemaImpl {
 		return Arrays.<Table<?>>asList(
 			Order.ORDER,
 			SchemaVersion.SCHEMA_VERSION,
-			User.USER);
+			User.USER,
+			Userwithorder.USERWITHORDER);
 	}
 }

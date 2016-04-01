@@ -34,7 +34,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Order extends TableImpl<OrderRecord> {
 
-	private static final long serialVersionUID = 620248172;
+	private static final long serialVersionUID = -1099461244;
 
 	/**
 	 * The reference instance of <code>study.order</code>
@@ -62,7 +62,7 @@ public class Order extends TableImpl<OrderRecord> {
 	/**
 	 * The column <code>study.order.amout</code>. 订单金额(单位为分)
 	 */
-	public final TableField<OrderRecord, String> AMOUT = createField("amout", org.jooq.impl.SQLDataType.CLOB.nullable(false), this, "订单金额(单位为分)");
+	public final TableField<OrderRecord, Long> AMOUT = createField("amout", org.jooq.impl.SQLDataType.BIGINT.nullable(false), this, "订单金额(单位为分)");
 
 	/**
 	 * The column <code>study.order.status</code>. 订单状态

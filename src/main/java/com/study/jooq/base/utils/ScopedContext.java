@@ -51,6 +51,6 @@ public class ScopedContext implements AutoCloseable{
     @Override
     public void close() throws Exception {
         connection.close();
-        GlobalContext.INSTANCE.getConnPoolService().shutdown();
+        //GlobalContext.INSTANCE.getConnPoolService().shutdown();
     }
 }
