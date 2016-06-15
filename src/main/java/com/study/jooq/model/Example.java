@@ -9,9 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 import static com.study.jooq.common.generated.Tables.*;
 
@@ -23,12 +21,13 @@ public class Example {
 
     public static void main(String[] args) throws Exception {
         //base();
+        //sunQuery();
         //advance();
         //batch();
         //function();
         //procedure();
         //view();
-        reuseStatement();
+        //reuseStatement();
     }
 
 
@@ -77,6 +76,26 @@ public class Example {
             //delete
             int deleteRecordRet = create.deleteFrom(USER).where(USER.UID.eq(userRecord.getUid())).execute();
             log.info("deleteRecordRet:{}", deleteRecordRet);
+        }
+    }
+
+    private static void sunQuery() throws Exception{
+        try (ScopedContext scopedContext = new ScopedContext()) {//try with resource
+            DSLContext create = scopedContext.getDSLContext();
+            //查询指定多个用户的最新一个订单信息
+            Set<Integer> uids=new HashSet<>();
+            uids.add(10001);
+            uids.add(10002);
+            uids.add(10003);
+            //构建内层查询语句
+            Table<OrderRecord> subTable = create.selectFrom(ORDER).
+                    where(ORDER.UID.in(uids)).
+                    orderBy(ORDER.ORDER_TIME.desc()).
+                    asTable("A");
+
+            Result<OrderRecord> oreders = create.selectFrom(subTable).
+                    groupBy(subTable.field(0), subTable.field(1)).//按照第一个、第二个字段进行group by
+                    fetch();
         }
     }
 
