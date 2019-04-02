@@ -26,7 +26,7 @@ public class HikariCpImpl implements ConnectionPoolService {
         properties.setProperty("dataSource.portNumber", "3306");
         properties.setProperty("dataSource.databaseName", "study");
         properties.setProperty("dataSource.user", "root");
-        properties.setProperty("dataSource.password", "zhilaiadmin");
+        properties.setProperty("dataSource.password", "root");
         properties.setProperty("dataSource.encoding", "UTF-8");
         properties.setProperty("maximumPoolSize", "100");
         HikariConfig config = new HikariConfig(properties);

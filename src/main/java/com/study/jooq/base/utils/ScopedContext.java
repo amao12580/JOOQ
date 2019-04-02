@@ -14,6 +14,7 @@ import java.sql.SQLException;
 /**
  * Created by Administrator on 2016/3/31.
  */
+
 public class ScopedContext implements AutoCloseable{
     private Connection connection = null;
     private DSLContext dslContext = null;
@@ -39,6 +40,10 @@ public class ScopedContext implements AutoCloseable{
         return connection;
     }
 
+    /**
+     * 从连接池中获取 Connection 实例
+     * @return
+     */
     private Connection createPoolConnection(){
         try {
             return GlobalContext.INSTANCE.getConnPoolService().getConnection();
