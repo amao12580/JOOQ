@@ -26,9 +26,13 @@ public class Example {
         //batch();
         //function();
         //procedure();
-        //view();
+        view();
         //reuseStatement();
     }
+
+
+
+
 
 
     private static void base() throws Exception {

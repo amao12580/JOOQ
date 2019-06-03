@@ -19,7 +19,7 @@
         <!--数据库迁移所用的参数 -->
         <db.url>jdbc:mysql://localhost:3306</db.url>
         <db.username>root</db.username>
-        <db.password>zhilaiadmin</db.password>
+        <db.password>root</db.password>
         <db.schema>study</db.schema>
     </properties>
 
@@ -58,6 +58,11 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.36</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
         </dependency>
 
         <!--如果不将该包导入, 编译会报错, 有人遇到了同样的问题.
